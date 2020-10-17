@@ -15,7 +15,11 @@
       <h1>FxOS Online Tools</h1>
     </header>
     <main>
-      <section>
+       <section>
+        <button id="wifihotspot">Hotspot</button>
+      </section>
+	<br><br>     
+	<section>
         <button id="webhotspot">Internet Sharing</button>
       </section>
 	<br><br>
@@ -36,7 +40,22 @@
       <p>2020 — present<br> Credits to Bananahacker Community</p>
     </footer>
     <script>
-	    document.getElementById('webhotspot').addEventListener('click', function(e){
+	    	    document.getElementById('wifihotspot').addEventListener('click', function(e){
+  if(window.MozActivity) {
+    var act = new MozActivity({
+      name: "configure",
+      data: {
+        target: "device",
+        section: "hotspot_wifi_settings"
+      }
+    })
+  }
+  else {
+    window.alert('This does not seems KaiOS device. Please open the page from the device itself!')
+  }
+}, false)
+	    
+	document.getElementById('webhotspot').addEventListener('click', function(e){
   if(window.MozActivity) {
     var act = new MozActivity({
       name: "configure",
