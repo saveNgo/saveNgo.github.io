@@ -16,6 +16,9 @@
     </header>
     <main>
       <section>
+        <button id="webhotspot">Internet Sharing</button>
+      </section>	
+      <section>
         <button id="w2d">Launch Developer menu</button>
       </section>
       <br><br>
@@ -32,6 +35,21 @@
       <p>2020 — present<br>credits to Bananahacker Community</p>
     </footer>
     <script>
+	    document.getElementById('webhotspot').addEventListener('click', function(e){
+  if(window.MozActivity) {
+    var act = new MozActivity({
+      name: "configure",
+      data: {
+        target: "device",
+        section: "hotspot"
+      }
+    })
+  }
+  else {
+    window.alert('This does not seems KaiOS device. Please open the page from the device itself!')
+  }
+}, false)
+	    
 document.getElementById('w2d').addEventListener('click', function(e) {
         if(window.MozActivity) {
           var act = new MozActivity({
@@ -43,7 +61,7 @@ document.getElementById('w2d').addEventListener('click', function(e) {
           })
         }
         else {
-          window.alert('Please open the page from the device itself!')
+          window.alert('This does not seems KaiOS device. Please open the page from the device itself!')
         }
       }, false)
 
