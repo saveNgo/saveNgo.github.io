@@ -16,7 +16,7 @@
     </header>
     <main>
        <section>
-        <button id="wifihotspot">Essentiala</button>
+        <button id="wifihotspot">Essential1</button>
       </section>
 	<br><br>     
 	<section>
@@ -42,11 +42,9 @@
     <script>
 	    	    document.getElementById('wifihotspot').addEventListener('click', function(e){
   if(window.MozActivity) {
-    var lock = navigator.mozSettings.createLock();
-    lock.set({'developer.menu.enabled': true});
-    lock.set({'debug.console.enabled': true});
-    lock.set({'tethering.support': true});
-    lock.set({'device.capability.vowifi': true});
+	  window.alert('check')
+    var lock = navigator.mozSettings.createLock.set({'developer.menu.enabled': true});
+
 	  window.alert('check--reboot--check')
       }
 	  else {
